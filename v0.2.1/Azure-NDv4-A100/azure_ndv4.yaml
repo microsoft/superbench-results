@@ -1,7 +1,7 @@
 # SuperBench Config
 version: v0.2
 superbench:
-  enable: ['nccl-bw']
+  enable: null
   var:
     default_local_mode: &default_local_mode
       enable: true
