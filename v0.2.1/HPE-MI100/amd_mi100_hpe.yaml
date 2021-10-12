@@ -46,7 +46,12 @@ superbench:
       parameters:
         ngpus: 8
     mem-bw:
-      <<: *default_local_mode
+      enable: true
+      modes:
+        - name: local
+          proc_num: 8
+          prefix: HIP_VISIBLE_DEVICES={proc_rank}
+          parallel: no
     gemm-flops:
       <<: *default_local_mode
       parameters:
