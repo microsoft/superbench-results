@@ -59,7 +59,7 @@ superbench:
           prefix: PROC_RANK={proc_rank} IB_DEVICES=1,3,5,7 NUMA_NODES=1,0,3,2
           parallel: yes
     cpu-memory-bw-latency:
-      enable: true
+      enable: false
       modes:
         - name: local
           proc_num: 1
@@ -99,7 +99,7 @@ superbench:
         rand_write_runtime: 60
         rand_readwrite_runtime: 60
     gpu-copy-bw:
-      enable: true
+      enable: false
       modes:
         - name: local
           parallel: no
@@ -113,8 +113,10 @@ superbench:
           - dma
     cudnn-function:
       <<: *default_local_mode
+      enable: false
     cublas-function:
       <<: *default_local_mode
+      enable: false
     matmul:
       <<: *default_local_mode
       frameworks:
@@ -125,6 +127,7 @@ superbench:
       <<: *default_pytorch_mode
     ort-inference:
       <<: *default_local_mode
+      enable: false
     tensorrt-inference:
       <<: *default_local_mode
       parameters:
@@ -139,6 +142,7 @@ superbench:
         seq_length: 224
         batch_size: 32
         precision: int8
+      enable: false
     gpt_models:
       <<: *default_pytorch_mode
       models:
@@ -148,6 +152,7 @@ superbench:
         <<: *common_model_config
         batch_size: 8
         seq_len: 224
+      enable: false
     bert_models:
       <<: *default_pytorch_mode
       models:
@@ -156,6 +161,7 @@ superbench:
       parameters:
         <<: *common_model_config
         seq_len: 224
+      enable: false
     lstm_models:
       <<: *default_pytorch_mode
       models:
@@ -167,6 +173,7 @@ superbench:
         hidden_size: 1000
         seq_len: 32
         pin_memory: no
+      enable: false
     resnet_models:
       <<: *default_pytorch_mode
       models:
@@ -177,6 +184,7 @@ superbench:
         <<: *common_model_config
         batch_size: 192
         num_steps: 512
+      enable: false
     densenet_models:
       <<: *default_pytorch_mode
       models:
@@ -185,6 +193,7 @@ superbench:
       parameters:
         <<: *common_model_config
         pin_memory: no
+      enable: false
     vgg_models:
       <<: *default_pytorch_mode
       models:
@@ -195,3 +204,4 @@ superbench:
       parameters:
         <<: *common_model_config
         pin_memory: no
+      enable: false
