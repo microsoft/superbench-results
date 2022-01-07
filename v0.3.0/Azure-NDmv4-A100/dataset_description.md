@@ -22,8 +22,8 @@ Included benchamrks:
 -   resnet_models
 -   densenet_models
 -   vgg_models
+-   gpu-sm-copy-bw
 
 Missed benchamrks: 
 
 -  disk-benchmark
--  gpu-copy-bw
