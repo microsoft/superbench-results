@@ -129,6 +129,7 @@ superbench:
       <<: *default_pytorch_mode
     ort-inference:
       <<: *default_local_mode
+      enable: false
     tensorrt-inference:
       <<: *default_local_mode
       parameters:
@@ -143,6 +144,7 @@ superbench:
         seq_length: 224
         batch_size: 32
         precision: int8
+      enable: false
     gpt_models:
       <<: *default_pytorch_mode
       models:
