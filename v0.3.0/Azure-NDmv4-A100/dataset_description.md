@@ -4,7 +4,7 @@ The dataset is generated from 729 ndmv4 nodes' Superbench v0.3 raw results.
 
 The results are the averaged data among the same type of metrics. For example, we aggregate IB loopback bandwidth from 8 NICs together and do the average, aggregate kernel launch time from 8 GPUs together and do the average, aggregate disk IO latency from 8 disks together and do the average, etc.
 
-Included benchamrks: 
+Included benchmarks: 
 
 -   kernel-launch
 -   gemm-flops
@@ -24,6 +24,6 @@ Included benchamrks:
 -   vgg_models
 -   gpu-sm-copy-bw
 
-Missed benchamrks: 
+Missed benchmarks: 
 
 -  disk-benchmark
