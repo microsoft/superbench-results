@@ -1,0 +1,45 @@
+# SuperBench rules
+version: v0.3
+superbench:
+  rules:
+    mem_bw_rule:
+      function: variance
+      criteria: 'lambda x:x<-0.05'
+      categories: Mem
+      metrics:
+        - mem-bw/H2D_Mem_BW:\d*
+        - mem-bw/D2H_Mem_BW:\d*
+    gflops_rule:
+      function: variance
+      criteria: 'lambda x:x<-0.05'
+      categories: GFLOPS
+      metrics:
+        - gemm-flops/FP64:\d*
+        - gemm-flops/FP32:\d*
+        - gemm-flops/FP16:\d*
+    tensor_core_rule:
+      function: variance
+      criteria: 'lambda x:x<-0.05'
+      categories: TensorCore
+      metrics:
+        - gemm-flops/*_TC:\d*
+    rdma_loopback_rule:
+      function: variance
+      criteria: 'lambda x:x<-0.05'
+      categories: RDMA
+      metrics:
+        - ib-loopback/IB_write_8388608_Avg_\d*:\d*
+    nccl_rule:
+      function: variance
+      criteria: 'lambda x:x<-0.05'
+      categories: NCCL
+      metrics:
+        - nccl-bw/allreduce_8589934592_busbw:\d*
+    model_throughput_rule:
+      function: variance
+      criteria: 'lambda x:x<-0.05'
+      categories: Model
+      metrics:
+        - gpt_models/.*/throughput_train_.*
+        - lstm_models/pytorch-lstm/throughput_train_.*
+        - bert_models/pytorch-bert-.*/throughput_train_.*
