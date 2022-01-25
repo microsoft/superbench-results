@@ -81,7 +81,7 @@ superbench:
           prefix: CUDA_VISIBLE_DEVICES={proc_rank} numactl -N $(({proc_rank}/2))
           parallel: no
     gpu-copy-bw:
-      enable: false
+      enable: true
       modes:
         - name: local
           parallel: no
@@ -100,4 +100,3 @@ superbench:
         <<: *common_model_config
         batch_size: 8
         seq_len: 224
-      enable: false
