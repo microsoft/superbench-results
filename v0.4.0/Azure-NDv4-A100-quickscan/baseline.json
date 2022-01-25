@@ -21,7 +21,6 @@
   "kernel-launch/event_time": 0.0057,
   "kernel-launch/return_code": 0,
   "kernel-launch/wall_time": 0.0096,
-  "mem-bw/d2d_bw": 1155.5924,
   "mem-bw/d2h_bw": 26.0322,
   "mem-bw/h2d_bw": 25.9247,
   "mem-bw/return_code": 0,

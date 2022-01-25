@@ -89,9 +89,7 @@ superbench:
         mem_type:
           - htod
           - dtoh
-          - dtod
         copy_type:
-          - sm
           - dma
     gpt_models:
       <<: *default_pytorch_mode
