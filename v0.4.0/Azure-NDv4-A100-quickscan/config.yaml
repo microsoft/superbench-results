@@ -80,17 +80,6 @@ superbench:
           proc_num: 8
           prefix: CUDA_VISIBLE_DEVICES={proc_rank} numactl -N $(({proc_rank}/2))
           parallel: no
-    gpu-copy-bw:
-      enable: true
-      modes:
-        - name: local
-          parallel: no
-      parameters:
-        mem_type:
-          - htod
-          - dtoh
-        copy_type:
-          - dma
     gpt_models:
       <<: *default_pytorch_mode
       models:
