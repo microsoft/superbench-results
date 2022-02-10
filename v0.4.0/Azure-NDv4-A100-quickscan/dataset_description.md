@@ -14,5 +14,4 @@ Included benchmarks:
 
 Missed benchmarks：
 - gpt_models
-- gpu-copy-bw
 - cpu-memory-bw-latency
