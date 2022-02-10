@@ -11,7 +11,7 @@ Included benchmarks:
 - nccl-bw
 - ib-loopback
 - mem-bw
+- gpt_models
 
 Missed benchmarks：
-- gpt_models
 - cpu-memory-bw-latency
