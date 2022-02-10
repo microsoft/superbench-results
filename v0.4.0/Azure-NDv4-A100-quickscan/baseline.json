@@ -27,5 +27,8 @@
   "nccl-bw/allreduce_8589934592_algbw": 134.3119,
   "nccl-bw/allreduce_8589934592_busbw": 235.0457,
   "nccl-bw/allreduce_8589934592_time": 65263.0237,
-  "nccl-bw/return_code": 0
+  "nccl-bw/return_code": 0,
+  "gpt_models/pytorch-gpt2-large/return_code": 0,
+  "gpt_models/pytorch-gpt2-large/fp32_train_throughput": 27.2,
+  "gpt_models/pytorch-gpt2-large/fp16_train_throughput": 41.8
 }
