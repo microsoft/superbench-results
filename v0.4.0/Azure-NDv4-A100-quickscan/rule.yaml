@@ -1,0 +1,60 @@
+# SuperBench rules
+version: v0.4
+superbench:
+  rules:
+    kernel_launch:
+      function: value
+      criteria: 'lambda x:x>1'
+      categories: KernelLaunch
+      metrics:
+        - kernel-launch/.*_time:\d*
+    mem_bw:
+      function: variance
+      criteria: 'lambda x:x<-0.1'
+      categories: Mem
+      metrics:
+        - mem-bw/h2d_bw:\d*
+        - mem-bw/d2h_bw:\d*
+    gflops:
+      function: variance
+      criteria: 'lambda x:x<-0.1'
+      categories: GFLOPS
+      metrics:
+        - gemm-flops/fp64_flops:\d*
+        - gemm-flops/fp32_flops:\d*
+        - gemm-flops/fp16_flops:\d*
+    tensor_core:
+      function: variance
+      criteria: 'lambda x:x<-0.1'
+      categories: TensorCore
+      metrics:
+        - gemm-flops/*_tc_.*:\d*
+    rdma_loopback:
+      function: variance
+      criteria: 'lambda x:x<-0.1'
+      categories: RDMA
+      metrics:
+        - ib-loopback/ib_write_8388608_ib\d+_bw:\d*
+    nccl:
+      function: variance
+      criteria: 'lambda x:x<-0.1'
+      categories: NCCL
+      metrics:
+        - nccl-bw/allreduce_8589934592_busbw:\d*
+    model_throughput:
+      function: variance
+      criteria: 'lambda x:x<-0.1'
+      categories: Model
+      metrics:
+        - gpt_models/pytorch-gpt2-large/.*_train_throughput
+    failure:
+      function: value
+      criteria: 'lambda x:x>0'
+      categories: MissTest
+      metrics:
+        - gemm-flops/return_code
+        - ib-loopback/return_code
+        - kernel-launch/return_code
+        - mem-bw/return_code
+        - nccl-bw/return_code
+        - gpt_models/pytorch-gpt2-large/return_code
